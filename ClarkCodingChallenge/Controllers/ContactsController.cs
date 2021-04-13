@@ -1,11 +1,19 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ClarkCodingChallenge.Models;
+using ClarkCodingChallenge.BusinessLogic;
+using System.Collections.Generic;
 
 namespace ClarkCodingChallenge.Controllers
 {
-    public class ContactsController : Controller
-    {
+    public class ContactsController : Controller {
+
+        private ContactsService ContactService;
+
+        public ContactsController(ContactsService contactService){
+            ContactService = contactService;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -16,5 +24,37 @@ namespace ClarkCodingChallenge.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost]
+        public IActionResult Create(UserInfoModel user) {
+            
+            if(!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+
+            ViewBag.CurrentUser = user;
+            ContactService.Add(user);
+
+            return Created(string.Empty, user);
+        }
+
+        [HttpGet]
+        public ActionResult<List<UserInfoModel>> Get() {
+
+            if (!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+
+            var Contacts = ContactService.Get();
+
+            return Ok(Contacts);
+        }
+
+
+
+
+
+
+
     }
 }
