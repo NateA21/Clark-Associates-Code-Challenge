@@ -29,3 +29,4 @@ C:\Users\natea\source\repos\Coding-Challenge\ClarkCodingChallenge\obj\Debug\netc
 C:\Users\natea\source\repos\Coding-Challenge\ClarkCodingChallenge\obj\Debug\netcoreapp2.1\ClarkCodingChallenge.pdb
 C:\Users\natea\source\repos\Coding-Challenge\ClarkCodingChallenge\obj\Debug\netcoreapp2.1\ClarkCodingChallenge.genruntimeconfig.cache
 C:\Users\natea\source\repos\Coding-Challenge\ClarkCodingChallenge\obj\Debug\netcoreapp2.1\ClarkCodingChallenge.csproj.CopyComplete
+C:\Users\natea\Source\Repos\Coding-Challenge\ClarkCodingChallenge\obj\Debug\netcoreapp2.1\Razor\Views\Contacts\Contacts.cshtml.g.cs

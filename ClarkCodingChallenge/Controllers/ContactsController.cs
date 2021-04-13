@@ -35,11 +35,11 @@ namespace ClarkCodingChallenge.Controllers
             ViewBag.CurrentUser = user;
             ContactService.Add(user);
 
-            return Created(string.Empty, user);
+            return View("Index");
         }
 
         [HttpGet]
-        public ActionResult<List<UserInfoModel>> Get() {
+        public ActionResult<List<UserInfoModel>> Contacts() {
 
             if (!ModelState.IsValid) {
                 return BadRequest(ModelState);
@@ -47,7 +47,7 @@ namespace ClarkCodingChallenge.Controllers
 
             var Contacts = ContactService.Get();
 
-            return Ok(Contacts);
+            return View(Contacts);
         }
 
 

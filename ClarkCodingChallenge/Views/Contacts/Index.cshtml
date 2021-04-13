@@ -18,7 +18,8 @@
             </fieldset>
         </form>
 
-        <p>@ViewBag.CurrentUser</p>
+        @if (ViewBag.CurrentUser != null) { <p>CurrentUser: <br /> @ViewBag.CurrentUser.FirstName , @ViewBag.CurrentUser.LastName </p> }
+
     </div>
 </div>
 
